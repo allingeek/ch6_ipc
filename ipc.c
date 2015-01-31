@@ -72,7 +72,10 @@ int consumer()
     char buffer[MAX_SIZE + 1];
     ssize_t bytes_read;
     mqd_t mq = mq_open(Q_NAME, O_RDONLY);
-
+    if ((mqd_t)-1 == mq) {
+        printf("Either the producer has not been started or maybe I cannot access the same memory...\n");
+        exit(1);
+    }
     do {
         bytes_read = mq_receive(mq, buffer, MAX_SIZE, NULL);
         buffer[bytes_read] = '\0';
