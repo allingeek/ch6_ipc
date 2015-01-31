@@ -11,7 +11,7 @@
 #define Q_NAME    "/ch6_ipc"
 #define MAX_SIZE  1024
 #define M_EXIT    "done"
-#define SRV_FLAG  "-server"
+#define SRV_FLAG  "-producer"
 
 int main(int argc, char *argv[])
 {
